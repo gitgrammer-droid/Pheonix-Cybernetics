@@ -1,0 +1,1264 @@
+/* General styling for the homepage */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #1a1a3a;
+    color: #e0e0e0;
+    line-height: 1.6;
+
+
+}
+
+/* Light Mode */
+.light-mode {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.light-mode .student-card {
+    background-color: #fff;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #1e1e1e;
+    color: #eee;
+}
+
+.dark-mode .container {
+    color: #eee;
+}
+
+.dark-mode .student-card {
+    background-color: #2a2a2a;
+    border-left-color: #4db6ac;
+}
+
+/*  styling for the button and the text*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #6a1bb3;
+    /* A vibrant call-to-action color */
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    /* brings the Pill shape that makes it lookn a bit mod3ern */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button:hover {
+    background-color: #8c2df1;
+    transform: translateY(-2px);
+}
+
+/* styling for the button and the text ends here */
+
+
+
+
+
+
+/* Header Styling starts here */
+.header {
+    background-color: rgba(115, 53, 215, 0);
+    position: fixed;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(6, 44, 147, 0.6);
+    border-radius: 20px;
+    left: 10px;
+    right: 10px;
+    top: 10px;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    /* blur brings a more modern feeling or even touch*/
+    border: 1px solid rgba(79, 34, 158, 0.3);
+}
+
+.logo img {
+    height: px;
+    width: 150px;
+    background-color: transparent;
+    object-fit: contain;
+    /* tgis ensures the logo fits without beingg distorted  */
+}
+
+logo h1 {
+    color: #fcf9f9;
+    font-size: 1.8em;
+    margin-left: 15px;
+    /* the space that is betwn logo and text */
+    font-weight: 600;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+    margin-left: 35px;
+}
+
+nav ul li a {
+    color: #fcf9f9;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px 0;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 10px;
+    transition: color 0.3s ease;
+}
+
+/* the line on Top Effect */
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #8c2df1;
+    transition: width 0.3s ease-out;
+    z-index: 2;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+}
+
+/* the  stream of Light Effect */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right,
+            rgba(50, 92, 230, 0.2) 0%,
+            rgba(79, 34, 158, 0.445) 50%,
+            rgba(155, 31, 232, 0.2) 100%);
+    transform: skewX(-20deg);
+    pointer-events: none;
+    z-index: 3;
+    transition: transform 0.4s ease-in-out;
+    border-radius: 5px;
+}
+
+nav ul li a:hover::after {
+    transform: skewX(-20deg) translateX(250%);
+    transition: transform 0.6s ease-in-out;
+}
+
+
+
+
+/* Search button styling */
+.search {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(194, 41, 87, 0.2);
+    padding: 8px 12px;
+    border-radius: 50px;
+    /* Pill shape for the  search bar */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.search:focus-within {
+    background-color: rgba(194, 41, 87, 0.4);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 15px rgba(194, 41, 87, 0.5);
+}
+
+.search :is(input, button) {
+    background: transparent;
+    color: inherit;
+    border: none;
+    outline: none;
+}
+
+.searchinput {
+    width: 0;
+    transition: width 0.5s ease;
+    padding-right: 5px;
+    /* Space between the text and search icon */
+}
+
+.searchbutton {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    /* for the size to iincrease in the clickable area */
+    cursor: pointer;
+    transition: color 0.25s ease, transform 0.2s ease;
+    font-size: 20px;
+}
+
+.searchbutton:hover {
+    color: #8c2df1;
+    transform: scale(1.1);
+}
+
+.search:focus-within input {
+    width: 220px;
+}
+
+::placeholder {
+    font: inherit;
+    color: rgba(227, 227, 227, 0.7);
+}
+
+/* header styling ends here */
+
+
+
+
+
+
+
+/* Hero Section Styling begins here */
+.hero-section {
+    background-image: linear-gradient(rgba(33, 33, 72, 0.7), rgba(29, 29, 216, 0.215)), url('/images/Studentsss.png');
+    background-size: cover;
+    background-position: center;
+    /* box-shadow: inset 0 0 100px rgba(41, 95, 26, 0.927); */
+    padding: 180px 20px 80px;
+    /*adjusted for the header*/
+    text-align: center;
+    color: #fff;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    /*for the lighting effects */
+}
+
+/* to create a  semi-transparent layer that sits on top of a backgroun */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top left, rgba(79, 34, 158, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at bottom right, rgba(50, 92, 230, 0.15) 0%, transparent 50%);
+    z-index: 0;
+}
+
+.main-area {
+    background-color: rgba(70, 117, 161, 0.15);
+    width: 100%;
+    max-width: 1000px;
+    min-height: 600px;
+    backdrop-filter: blur(8px);
+    /* Stronger blur for glassmorphism   ( the frosted glass effect.) */
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideInFromTop 1s ease-out;
+    /* Animation for the main area, making it look cool */
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+.cards .card1 {
+    width: 100%;
+    max-width: 700px;
+    margin: 0;
+    box-shadow: 0 10px 25px rgba(2, 18, 62, 0.766);
+    background: rgba(7, 24, 46, 0.7);
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.cards .card1 h3::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #8c2df1, transparent);
+    margin: 20px auto 0;
+
+}
+
+.cards .card1 .content {
+    padding: 10px;
+    z-index: 999;
+}
+
+.cards .card1 .content h1 {
+    color: #f9f3fce0;
+    font-size: 3.8em;
+    margin-top: 10px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.678), 0 0 30px rgba(132, 59, 219, 0.5);
+    /* for a glowing text shado, makes it look featuristic */
+    line-height: 1.2;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #8c2df1;
+    box-shadow: 0 0 15px rgba(140, 45, 241, 0.7);
+    border-radius: 10px;
+}
+
+.cards .card1 .content h3 {
+    color: #c5aad7;
+    font-size: 1.5em;
+
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #8c2df1;
+    box-shadow: 0 0 15px rgba(140, 45, 241, 0.7);
+    border-radius: 10px;
+
+}
+
+.cards .card1 .content p {
+    max-width: 600px;
+    color: rgb(182, 182, 239);
+    font-size: 1.1em;
+    margin: 0 auto;
+    /* Centerng the paragraph */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #8c2df1;
+    box-shadow: 0 0 15px rgba(140, 45, 241, 0.7);
+    border-radius: 10px;
+}
+
+
+
+/* Styling for the headings &  texts inside the glowing boxes */
+section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+section:nth-of-type(even) {
+    background-color: #212148;
+}
+
+h2 {
+    font-size: 3em;
+    color: #8c2df1;
+    text-align: center;
+    margin-bottom: 50px;
+    text-shadow: 0 0 10px rgba(140, 45, 241, 0.4);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #8c2df1;
+    border-radius: 2px;
+}
+
+
+.inbetween {
+    background-image: linear-gradient(rgba(33, 33, 72, 0.905), rgba(29, 29, 216, 0.299));
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.73);
+    /* Softer inner shadow */
+}
+
+/* Hero Section Styling ends here */
+
+
+
+
+
+
+
+/* About Us Section begins */
+.about-us-section {
+    background-color: #1a1a3a;
+    background-image: linear-gradient(rgba(26, 33, 95, 0.83), rgba(120, 57, 197, 0.8));
+    box-shadow: inset 0 0 100px rgba(26, 33, 95, 0.637);
+    margin-top: 0;
+
+}
+
+.about-us-section h2 {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #8c2df1;
+    box-shadow: 0 0 15px rgba(140, 45, 241, 0.875);
+    border-radius: 10px;
+}
+
+.about-us-section p {
+    font-size: 1.1em;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    text-align: center;
+    color: #ccc;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.about-card {
+    background-color: rgba(7, 24, 46, 0.686);
+    background-image: linear-gradient(rgba(92, 22, 177, 0.712), rgb(19, 24, 41));
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.929);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+
+}
+
+.about-card h3 {
+    color: #8c2df1;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    text-shadow: 0 0 5px rgba(140, 45, 241, 0.2);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #8c2df1;
+    box-shadow: 0 0 15px rgba(140, 45, 241, 0.788);
+    border-radius: 10px;
+}
+
+.about-card p {
+    font-size: 1em;
+    color: #f6f5f5;
+    margin: 0;
+}
+
+/* About Us Section ends */
+
+
+
+
+
+
+/* Services/Pillars Section */
+
+/* Background glows in this section  */
+.background-glows1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+
+
+}
+
+.background-glows1::before,
+.background-glows1::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    animation: pulseGlow 10s infinite alternate;
+}
+
+/* the purple glow */
+.background-glow1::before {
+    width: 350px;
+    height: 350px;
+    background: rgba(185, 45, 241, 0.668);
+    /* Purple glow */
+    top: -10%;
+    left: 10%;
+}
+
+/* the blue glow */
+.background-glows1::after {
+    width: 450px;
+    height: 450px;
+    background: rgba(114, 135, 227, 0.773);
+    /* Blue glow */
+    bottom: 40%;
+    right: -5%;
+    animation-delay: 2s;
+}
+
+
+
+.services-pillars-section {
+    background-color: #212148;
+
+}
+
+.pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.pillar-card {
+    background-color: rgba(42, 42, 74, 0.7);
+    background-image: linear-gradient(rgba(92, 22, 177, 0.712), rgb(19, 24, 41));
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pillar-card:hover {
+    transform: translateY(-10px);
+    background-color: rgba(50, 50, 90, 0.8);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+.pillar-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px rgba(140, 45, 241, 0.5));
+    /* Glowing icon effect */
+}
+
+.services-pillars-section h2 {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #8c2df1;
+    box-shadow: 0 0 15px rgba(140, 45, 241, 0.875);
+    border-radius: 10px;
+}
+
+.pillar-card h3 {
+    color: #8c2df1;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #8c2df1;
+    box-shadow: 0 0 15px rgba(140, 45, 241, 0.875);
+    border-radius: 10px;
+}
+
+.pillar-card p {
+    color: #f8f6f6f0;
+    font-size: 0.95em;
+}
+
+/*Services/Pillars Section ends here */
+
+
+
+
+
+
+
+/* Articles Section */
+.articles-section {
+    background-color: #1a1a3a;
+
+
+}
+
+/* this is for the glowing effect on the boxes carrying words or texts */
+.articles-section h2 {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #8c2df1;
+    box-shadow: 0 0 15px rgba(140, 45, 241, 0.875);
+    border-radius: 10px;
+
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.article-card {
+    background-color: rgba(7, 24, 46, 0.7);
+    background-image: linear-gradient(rgba(92, 22, 177, 0.712), rgb(19, 24, 41));
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+.article-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.article-card h3 {
+    color: #fcf9f9;
+    font-size: 1.5em;
+    padding: 15px 20px 10px;
+    margin: 0;
+}
+
+.article-card p {
+    color: #ffffffcc;
+    font-size: 0.95em;
+    padding: 0 20px 15px;
+    margin: 0;
+}
+
+/* .article-card .read-more {
+    display: block;
+    text-align: center;
+    padding: 10px 20px 20px;
+    color: #8c2df1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    border-radius: 15px;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.article-card .read-more:hover {
+    color: #efd8ff;
+    text-decoration: underline;
+    background-color: rgba(122, 37, 212, 0.751);
+    
+} */
+
+/* Background glows in this section  */
+.background-glows {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.background-glows::before,
+.background-glows::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    animation: pulseGlow 10s infinite alternate;
+}
+
+/* Purple glow */
+.background-glows::before {
+    width: 350px;
+    height: 350px;
+    background: rgba(185, 45, 241, 0.668);
+    /* Purple glow */
+    top: -10%;
+    left: 10%;
+}
+
+/* Blue glow */
+.background-glows::after {
+    width: 450px;
+    height: 450px;
+    background: rgba(160, 223, 255, 0.621);
+    /* Blue glow */
+    bottom: 60%;
+    right: -10%;
+    animation-delay: 2s;
+}
+
+/* Articles Section e=nds here*/
+
+
+
+
+
+
+
+
+/* Testimonials Section styling*/
+.testimonials-section {
+    background-color: #212148;
+    position: relative;
+}
+
+.testimonials-section h2 {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #8c2df1;
+    box-shadow: 0 0 15px rgba(140, 45, 241, 0.875);
+    border-radius: 10px;
+
+}
+
+.testimonials-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(79, 34, 158, 0.1) 0%, rgba(50, 92, 230, 0.1) 100%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.testimonial-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* this  allows it wrapping on smaller screens */
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-card {
+    background-color: rgba(7, 24, 46, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #b0b0b0;
+}
+
+.testimonial-card h4 {
+    color: #8c2df1;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+/* Testimonials Section ends here*/
+
+
+
+
+
+
+
+
+
+/* Call to Action Section */
+.call-to-action-section {
+    background-color: #1a1a3a;
+    text-align: center;
+    padding: 100px 20px;
+    background-image: linear-gradient(rgba(140, 45, 241, 0.1), transparent), url('/images/abstract-bg.png');
+    background-position: center;
+}
+
+.call-to-action-section h2 {
+    color: #fff;
+    font-size: 2.8em;
+}
+
+.call-to-action-section p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 20px auto 30px;
+    color: #d0d0d0;
+}
+
+/* Call to Action Section ends here*/
+
+
+
+
+
+
+
+
+/* Newsletter Section styling */
+.newsletter-section {
+    background-color: #212148;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.newsletter-section h2 {
+
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #8c2df1;
+    box-shadow: 0 0 15px rgba(140, 45, 241, 0.875);
+    border-radius: 10px;
+}
+
+.newsletter-section h2 {
+    color: #8c2df1;
+}
+
+.newsletter-section p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #b0b0b0;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(7, 24, 46, 0.7);
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.newsletter-form input[type="email"] {
+    flex-grow: 1;
+    padding: 15px 25px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #fcf9f9;
+    font-size: 1em;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.newsletter-form input[type="email"]::placeholder {
+    color: rgba(227, 227, 227, 0.6);
+}
+
+.newsletter-form .cta-button {
+    margin: 0;
+    border-radius: 0 50px 50px 0;
+    padding: 15px 30px;
+    font-size: 1em;
+    box-shadow: none;
+}
+
+
+/* --- Responsive Adjustments for different screeen siz|es--- */
+/* --- Animations --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+@media (max-width: 1024px) {
+    nav ul li {
+        margin-left: 20px;
+    }
+
+    .cards .card1 .content h1 {
+        font-size: 3em;
+    }
+
+    .cards .card1 .content h3 {
+        font-size: 1.3em;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    .about-card h3 {
+        font-size: 1.5em;
+    }
+
+    .pillar-card h3 {
+        font-size: 1.4em;
+    }
+
+    .article-card h3 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+        position: relative;
+        /* Make header static on small screens */
+        top: 0;
+        left: 0;
+        right: 0;
+        border-radius: 0;
+        /* Remove border radius for full width */
+        box-shadow: 0 2px 8px rgba(6, 44, 147, 0.958);
+    }
+
+    .header nav {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        border-radius: 0;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-top: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        /* Separator for mobile links */
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    nav ul li a {
+        padding: 12px 0;
+        font-size: 18px;
+    }
+
+    .search {
+        width: 100%;
+        margin-top: 15px;
+        justify-content: center;
+    }
+
+    .search:focus-within input {
+        width: 80%;
+        /* Adjusted width for mobile search */
+    }
+
+    .logo img {
+        height: 45px;
+        width: auto;
+        /* Allow auto width for better scaling */
+    }
+
+    .hero-section {
+        padding: 120px 20px 60px;
+        /* Adjust for static header */
+        min-height: 70vh;
+    }
+
+    .cards .card1 .content h1 {
+        font-size: 2.5em;
+    }
+
+    .cards .card1 .content h3 {
+        font-size: 1.1em;
+    }
+
+    .cards .card1 .content p {
+        font-size: 0.9em;
+    }
+
+    h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+
+
+    .about-us-section p,
+    .call-to-action-section p,
+    .newsletter-section p {
+        font-size: 1em;
+        max-width: 90%;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        border-radius: 15px;
+        box-shadow: none;
+        border: none;
+    }
+
+    .newsletter-form input[type="email"] {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 15px 15px 0 0;
+        padding: 15px 20px;
+    }
+
+    .newsletter-form .cta-button {
+        border-radius: 0 0 15px 15px;
+        width: 100%;
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-col h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .cards .card1 .content h1 {
+        font-size: 2em;
+    }
+
+    .cards .card1 .content h3 {
+        font-size: 1em;
+    }
+
+    .main-area {
+        min-height: 350px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .about-card,
+    .pillar-card,
+    .article-card,
+    .testimonial-card {
+        padding: 20px;
+    }
+
+    .testimonial-card p {
+        font-size: 1em;
+    }
+}
+
+/* --- Keyframe Animations --- */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes pulse-shadow {
+    0% {
+        box-shadow: 0 0 15px rgba(140, 45, 241, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 25px rgba(140, 45, 241, 0.7);
+    }
+
+    100% {
+        box-shadow: 0 0 15px rgba(140, 45, 241, 0.4);
+    }
+}
+
+
+
+
+
+
+/* footeer section begins here */
+Footer Section .footer {
+    background-color: #0d0d26;
+    color: #b0b0b0;
+    padding: 60px 0 30px;
+    font-size: 0.95em;
+    border-top: 1px solid rgba(79, 34, 158, 0.3);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    color: #8c2df1;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 40px;
+    height: 3px;
+    background-color: #8c2df1;
+    border-radius: 2px;
+}
+
+.footer-col p {
+    margin-bottom: 10px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #fcf9f9;
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: brightness(0.8) drop-shadow(0 0 5px rgba(140, 45, 241, 0.3));
+}
+
+.social-links img:hover {
+    transform: translateY(-3px) scale(1.1);
+    filter: brightness(1) drop-shadow(0 0 10px rgba(140, 45, 241, 0.7));
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #808080;
+    font-size: 0.9em;
+
+}
+/* footeer section edns here */

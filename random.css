@@ -1,0 +1,384 @@
+/* this is for the space at the bottom of the style.css */
+/* --- About Page  --- */
+
+/* Smaller Hero Section for Inner Pages  */
+.hero-section.small-hero {
+    min-height: 50vh;
+    /* Reduced height for inner page heroes */
+    padding: 150px 20px 60px;
+    /* Adjusted padding */
+}
+
+.hero-section.small-hero .main-area {
+    min-height: 250px;
+    /* Smaller main area */
+    padding: 20px;
+}
+
+.hero-section.small-hero .cards .card1 {
+    padding: 20px;
+}
+
+.hero-section.small-hero .cards .card1 .content h1 {
+    font-size: 3em;
+    /* Adjust font size for inner page hero */
+    margin-top: 0;
+}
+
+.hero-section.small-hero .cards .card1 .content h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.hero-section.small-hero .cards .card1 .content p {
+    font-size: 0.9em;
+}
+
+/* General Content Section for About Page */
+.about-section-content {
+    background-color: #1a1a3a;
+    /* Default background */
+    padding: 80px 0;
+}
+
+.about-section-content.section-alt {
+    background-color: #212148;
+    /* Alternate background color */
+    background-image: linear-gradient(rgba(26, 33, 95, 0.83), rgba(120, 57, 197, 0.8));
+    /* Matching your existing about section gradient */
+    box-shadow: inset 0 0 100px rgba(26, 33, 95, 0.637);
+}
+
+.about-section-content h2 {
+    /* Inherits general h2 styling */
+    margin-bottom: 40px;
+}
+
+.section-intro-text {
+    /* For a short intro paragraph before a grid/slider */
+    font-size: 1.1em;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    /* More space below */
+    text-align: center;
+    color: #ccc;
+    line-height: 1.8;
+}
+
+/* New: Styling for content wrapped in flex cards (single column) */
+.cards-grid-single {
+    display: flex;
+    /* Use flexbox to center content */
+    justify-content: center;
+    align-items: center;
+    /* Vertically center if card height varies */
+    margin-top: 40px;
+    /* Space from heading */
+}
+
+.cards-grid-single .content-card {
+    width: 100%;
+    max-width: 800px;
+    /* Adjust max-width as desired */
+    /* Inherits styling from .card1 for background, shadow, border-radius, etc. */
+    /* Add specific padding if needed, or adjust .card1 .content padding */
+    padding: 30px;
+    /* Example padding specific to these content cards */
+}
+
+.cards-grid-single .content-card .content {
+    padding: 0;
+    /* Reset internal content padding if .card1 .content has it */
+}
+
+.cards-grid-single .content-card p {
+    /* Override global p styles for this card */
+    text-align: left;
+    /* Align text within the card */
+    margin-bottom: 1em;
+    /* Standard paragraph spacing */
+    max-width: none;
+    /* Allow paragraph to take full width of card */
+}
+
+.cards-grid-single .content-card ul {
+    list-style: disc;
+    /* Use bullets for lists within these cards */
+    text-align: left;
+    margin-left: 25px;
+    /* Indent list items */
+    margin-bottom: 1em;
+    max-width: none;
+}
+
+.cards-grid-single .content-card ul li {
+    background-color: transparent;
+    /* No individual list item background */
+    border-left: none;
+    /* No border for list items within content cards */
+    padding: 5px 0;
+    /* Lighter padding for list items */
+    box-shadow: none;
+    font-size: 1em;
+    /* Ensure font size is consistent */
+}
+
+
+/* Meet the Team Slider Section */
+.team-slider-wrapper {
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch;
+    /* Smoother scrolling on iOS */
+    padding-bottom: 20px;
+    /* Space for scrollbar */
+    margin-bottom: 20px;
+    /* Space below the slider */
+}
+
+/* Hide scrollbar for aesthetic purposes (optional) */
+.team-slider-wrapper::-webkit-scrollbar {
+    height: 8px;
+    /* Height of the horizontal scrollbar */
+}
+
+.team-slider-wrapper::-webkit-scrollbar-track {
+    background: #2a2a4f;
+    /* Track color */
+    border-radius: 10px;
+}
+
+.team-slider-wrapper::-webkit-scrollbar-thumb {
+    background: #8c2df1;
+    /* Thumb color */
+    border-radius: 10px;
+    border: 2px solid #2a2a4f;
+    /* Border around thumb */
+}
+
+.team-slider {
+    display: flex;
+    /* Makes cards align horizontally */
+    gap: 30px;
+    /* Space between team member cards */
+    padding: 10px;
+    /* Padding for the cards inside the scrollable area */
+}
+
+.team-member-card {
+    min-width: 300px;
+    /* Minimum width for each card */
+    flex-shrink: 0;
+    /* Prevent cards from shrinking */
+    /* Inherits most styling from .card1 like background, shadow, border-radius */
+    padding: 25px;
+    /* Adjust padding as needed for team cards */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+    /* Slightly stronger shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    /* Slight scale on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9);
+    /* Stronger hover shadow */
+}
+
+.team-member-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #6a1bb3;
+    /* CTA button color for border */
+    box-shadow: 0 0 20px rgba(140, 45, 241, 0.7);
+    /* Stronger glow */
+}
+
+.team-member-card h3 {
+    color: #fcf9f9;
+    font-size: 1.6em;
+    margin-bottom: 5px;
+}
+
+.team-member-card .role {
+    color: #8c2df1;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.team-member-card p {
+    font-size: 0.9em;
+    color: #b0b0b0;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.team-cta {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 1.1em;
+    color: #d0d0d0;
+}
+
+.inline-link {
+    color: #8c2df1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.inline-link:hover {
+    color: #efd8ff;
+    text-decoration: underline;
+}
+
+/* Contact Methods Grid (modified to also use card1) */
+.contact-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.contact-card.card1 {
+    /* Apply card1 styling to contact cards */
+    /* Inherits background, shadow, border-radius, etc. from .card1 */
+    padding: 30px;
+    /* Specific padding for contact cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card.card1:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+.contact-card h3 {
+    color: #8c2df1;
+    font-size: 1.6em;
+    /* Slightly larger for emphasis */
+    margin-bottom: 15px;
+}
+
+.contact-card p {
+    color: #b0b0b0;
+    font-size: 0.95em;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.contact-card a {
+    color: #fcf9f9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+    color: #8c2df1;
+    text-decoration: underline;
+}
+
+.cta-button-small {
+    display: inline-block;
+    background-color: #6a1bb3;
+    color: #fff;
+    padding: 8px 18px;
+    /* Smaller padding */
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    margin-top: 15px;
+    /* Less margin */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    font-size: 0.9em;
+    /* Smaller font size */
+}
+
+.cta-button-small:hover {
+    background-color: #8c2df1;
+    transform: translateY(-2px);
+}
+
+.final-contact-note {
+    margin-top: 40px;
+}
+
+/* Responsive adjustments for new sections */
+@media (max-width: 768px) {
+    .hero-section.small-hero {
+        min-height: 40vh;
+        padding: 100px 20px 40px;
+    }
+
+    .hero-section.small-hero .cards .card1 .content h1 {
+        font-size: 2em;
+    }
+
+    .about-section-content h2 {
+        font-size: 1.8em;
+    }
+
+    .section-intro-text,
+    .cards-grid-single .content-card p,
+    .cards-grid-single .content-card ul li {
+        font-size: 0.95em;
+    }
+
+    .team-member-card,
+    .contact-card {
+        padding: 20px;
+    }
+
+    .team-member-card h3 {
+        font-size: 1.4em;
+    }
+
+    .contact-card h3 {
+        font-size: 1.4em;
+    }
+
+    /* Team slider specific for smaller screens */
+    .team-slider {
+        justify-content: flex-start;
+        /* Align cards to the start for scrolling */
+    }
+
+    .team-member-card {
+        min-width: 280px;
+        /* Ensure cards are still visible and scrollable */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section.small-hero {
+        min-height: 30vh;
+        padding: 80px 15px 30px;
+    }
+
+    .hero-section.small-hero .cards .card1 .content h1 {
+        font-size: 1.5em;
+    }
+
+    .about-section-content h2 {
+        font-size: 1.5em;
+    }
+
+    .team-member-card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .cards-grid-single .content-card {
+        padding: 20px;
+        /* Reduce padding on smallest screens */
+    }
+
+    .team-member-card {
+        min-width: 250px;
+    }
+}
