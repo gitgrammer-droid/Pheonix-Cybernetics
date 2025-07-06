@@ -244,7 +244,7 @@ nav ul li a:hover::after {
 
 /* Hero Section Styling begins here */
 .hero-section {
-    background-image: linear-gradient(rgba(33, 33, 72, 0.7), rgba(29, 29, 216, 0.215)), url('/images/Studentsss.png');
+    background-image: linear-gradient(rgba(33, 33, 72, 0.7), rgba(29, 29, 216, 0.215)), url('images/Studentsss.png');
     background-size: cover;
     background-position: center;
     /* box-shadow: inset 0 0 100px rgba(41, 95, 26, 0.927); */
